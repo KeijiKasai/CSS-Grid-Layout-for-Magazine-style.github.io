@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/* =========================================================
+ Variable
+========================================================= */
+$sans: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+$serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+$fontColor: #000000;
+$linkColor: #000000;
+$pc: 769px;
+$sp: 768px;
+
+/* =========================================================
+ Default Style
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $sans;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: $fontColor;
+  padding: 50px 0 100px;
+  
+  @media screen and (max-width: 768px) {
+    padding: 50px 0;
+  }
+}
+
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+
+  a {
+    font-size: 1.4rem;
+    color: #000;
+    text-decoration: underline;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

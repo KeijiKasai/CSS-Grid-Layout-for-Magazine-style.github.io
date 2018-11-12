@@ -1,0 +1,188 @@
+@charset "UTF-8";
+@import "_settings.scss";
+
+$containerWidth: 1200px;
+
+/* =========================================================
+ Layout
+========================================================= */
+.grid {
+  &Wrap {
+    @media screen and(min-width: $pc) {
+      width: 100%;
+      max-width: $containerWidth;
+      margin: 0 auto;
+      display: grid;
+      grid-template:
+        ".      grid01 grid01 .      grid02 .     "
+        "grid03 grid03 .      grid04 grid04 grid04"
+        / (50/1200*100%) (578/1200*100%) (72/1200*100%) (90/1200*100%) (360/1200*100%) (50/1200*100%);
+
+      @for $i from 1 through 4 {  
+        .grid0#{$i} {
+          grid-area: grid0#{$i};
+        }
+      }  
+
+      .grid01 {
+        & > :last-child {
+          margin-bottom: (100/650*100%);
+        }
+      }
+
+      .grid02 {
+        justify-content: flex-end;
+        display: flex;
+        flex-direction: column;
+
+        & > :last-child {
+          margin-bottom: (-50/360*100%);
+        }
+      }
+
+      .grid04 {
+        & > :first-child {
+          margin-top: (350/500*100%);
+        }
+      }
+    }
+
+    @media screen and (max-width: $sp) {
+      display: block;
+      max-width: 100%;
+      width: (670 / 750 * 100%);
+      margin: 0 auto;
+
+      .grid02 {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+
+      .grid03 {
+        margin-bottom: 45px;
+      }
+
+      .grid04 {
+        width: (536 / 670 * 100%);
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+/* =========================================================
+ Design
+========================================================= */
+.item{
+  &Look {
+    font-size: 3.0rem;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    margin-bottom: 40px;
+
+    @media screen and(max-width: $sp) {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+      margin-top: 18px;
+
+      @media screen and(max-width: $sp) {
+        width: 15px;
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &Ttl {
+    font-size: 1.7rem;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: justify;
+
+    @media screen and(max-width: $sp) {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+  }
+
+  &Desc,
+  &Txt {
+    font-size: 1.3rem;
+    line-height: (24/12);
+    text-align: justify;
+
+    @media screen and(max-width: $sp) {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  &Txt {
+    @media screen and(min-width: $pc) {
+      margin-top: 40px;
+      &.forImage01 {
+        width: (428 / 628 * 100%);
+      }
+      
+      &.forImage02 {
+        width: (400 / 500 * 100%);
+      }
+    }
+
+    @media screen and(max-width: $containerWidth) {
+      &.forImage01 {
+        padding-left: 30px;
+      }
+    }
+
+    @media screen and(max-width: $sp) {
+      margin-top: 25px;
+      
+      &.forImage01 {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &Credits {
+    margin-top: 40px;
+    
+    @media screen and(max-width: $sp) {
+      margin-top: 20px;
+    }
+    
+    .credit {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+        
+      a {
+        display: block;
+        color: #666;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        text-decoration: underline;
+
+        @media screen and(max-width: $sp) {
+          font-size: 1.2rem;
+        }
+
+        &:hover {
+          text-decoration: none;
+          color: #7c7c7c;
+        }
+      }
+    }
+  }
+}
+

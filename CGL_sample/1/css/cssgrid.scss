@@ -1,0 +1,254 @@
+@charset "UTF-8";
+@import "_settings.scss";
+
+$containerWidth: 1000px;
+
+/* =========================================================
+ Layout
+========================================================= */
+.grid {
+  &Wrap {
+    width: 100%;
+    max-width: $containerWidth;
+    margin: 0 auto;
+    display: grid;
+    grid-template:
+      "grid01 grid01 .      grid02"
+      "grid01 grid01 grid04 grid04"
+      "grid03 .      grid04 grid04" /
+      42% 8% 8% 42%;
+      
+    @for $i from 1 through 4 {  
+      .grid0#{$i} {
+        grid-area: grid0#{$i};
+      }
+    } 
+
+    @media screen and (max-width: $sp) {
+      display: block;
+    }
+
+    .grid02 {
+      & > :first-child {
+        margin-top: (80/420*100%);
+
+        @media screen and (max-width: $sp) {
+          margin-top: 30px;
+        }
+      }
+
+      & > :last-child {
+        margin-bottom: (80/420*100%);
+
+        @media screen and (max-width: $sp) {
+          margin-bottom: 30px;
+        }
+      }
+
+      @media screen and (max-width: $sp) {
+        padding: 0 calc(60/750*100%);
+      }
+    }
+    .grid03 {
+      & > :first-child {
+        @media screen and (min-width: $pcMin) {
+          margin-top: (80/420*100%);
+        }
+      }
+
+      @media screen and (max-width: $sp) {
+        padding: 0 calc(60/750*100%);
+      }
+    }
+  }
+}
+
+/* =========================================================
+ Design
+========================================================= */
+.item {
+  &Ttl {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-family: $serif;
+    line-height: (40/24);
+    letter-spacing: 0.1rem;
+
+    @media screen and (max-width: $tab) {
+      font-size: 2.4rem;
+      line-height: (68/48);
+      letter-spacing: 0;
+    }
+
+    @media screen and (max-width: $containerWidth) {
+      margin-right: 20px;
+    }
+
+    @media screen and (max-width: $sp) {
+      margin-right: 0;
+    }
+  }
+
+  &Desc {
+    font-size: 1.6rem;
+    font-family: $sans;
+    line-height: (32/16);
+
+    @media screen and (max-width: $tab) {
+      font-size: 1.4rem;
+    }
+
+    @media screen and (max-width: $containerWidth) {
+      margin-right: 30px;
+    }
+
+    @media screen and (max-width: $sp) {
+      margin-right: 0;
+    }
+  }
+
+  &Credits {
+    margin-bottom: 20px;
+    
+    @media screen and (max-width: $containerWidth) {
+      margin-left: 30px;
+    }
+
+    @media screen and (max-width: $sp) {
+      margin-bottom: 5px;
+      margin-left: 0;
+    }
+
+    .credit {
+      padding: 7.5px 0;
+
+      @media screen and (max-width: $sp) {
+        padding: 14px 0;
+      }
+
+      a {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        @media screen and (max-width: $tab) {
+          flex-direction: column;
+          align-items: flex-start;
+          font-size: 1.3rem;
+        }
+
+        @media screen and (max-width: $sp) {
+          font-size: 1.4rem;
+        }
+
+        &::after {
+          content: '詳 細';
+          display: flex;
+          justify-content: center;
+          width: calc(100/420*100%);
+          padding: 10px 0;
+          font-size: 1.6rem;
+          line-height: 1;
+          color: #fff;
+          background: #000;
+          border: 1px solid #000;
+          box-sizing: border-box;
+          transition: all .2s ease;
+
+          @media screen and (max-width: $tab) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 35%;
+            font-size: 1.2rem;
+          }
+
+          @media screen and (max-width: $sp) {
+            width: calc(200/630*100%);
+            font-size: 1.6rem;
+          }
+        }
+
+        &:hover {
+          &::after {
+            color: #000;
+            background: #fff;
+          }
+        }
+      }
+
+      &Name {
+        display: flex;
+        align-items: center;
+        width: calc(170/420*100%);
+
+        @media screen and (max-width: $sp) {
+          width: calc(430/630*100%);
+        }
+        
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2.8rem;
+          height: 2.8rem;
+          margin-left: 3%;
+          font-size: 1.4rem;
+          line-height: 1;
+          color: #fff;
+          background-color: #000;
+
+          @media screen and (max-width: $sp) {
+            width: 2.3rem;
+            height: 2.3rem;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      &Price {
+        width: calc(150/420*100%);
+        padding: 0 calc(15/420*100%);
+        box-sizing: border-box;
+
+        @media screen and (max-width: $tab) {
+          padding: 0;
+        }
+
+        @media screen and (max-width: $sp) {
+          width: calc(430/630*100%);
+        }
+      }
+    }
+
+    &Other {
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      margin-top: 0;
+      margin-bottom: 0;
+
+      @media screen and (max-width: $sp) {
+        padding-top: 15px;
+        margin-bottom: 20px;
+      }
+
+      .credit {
+        a {
+          &::after {
+            color: #000;
+            background: #fff;
+          }
+
+          &:hover {
+            &::after {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+    }
+  }
+}
