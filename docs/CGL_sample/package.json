@@ -10,24 +10,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.26.14",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^6.0.0",
+    "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect-php": "^1.0.1",
     "gulp-notify": "^3.0.0",
-    "gulp-plumber": "^1.1.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sass-glob": "^1.0.8",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^3.0.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
     "postcss-cssnext": "^3.0.2",
-    "postcss-scss": "^2.0.0",
+    "postcss-scss": "^2.1.1",
     "postcss-sorting": "^3.0.2"
   },
   "dependencies": {
-    "array-differ": "^2.0.3",
-    "array-uniq": "^2.0.0"
+    "array-differ": "^2.1.0",
+    "array-uniq": "^2.1.0"
   }
 }
