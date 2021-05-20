@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.14",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect-php": "^1.0.1",
@@ -29,5 +29,8 @@
   "dependencies": {
     "array-differ": "^2.1.0",
     "array-uniq": "^2.1.0"
-  }
+  },
+  "browserslist": [
+    "last 2 version"
+  ]
 }

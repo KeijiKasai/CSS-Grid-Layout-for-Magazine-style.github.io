@@ -56,12 +56,6 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.write({includeContent: false}))
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(autoprefixer({
-      browsers: [
-        'last 2 version',
-        'Explorer >= 11',
-        'iOS >= 10',
-        'Android >= 4.4'
-      ],
       cascade: false,
       grid: true
     }))
@@ -79,9 +73,9 @@ gulp.task('sass', () => {
 gulp.task('watch', () => {
 
   // scssファイルが変更されたらsassタスクを実行
-  gulp.watch(src.scss + '**/*.scss', ['sass']);
+  return gulp.watch(src.scss + '**/*.scss', gulp.task('sass'));
   // watchファイルが変更されたら、ブラウザをリロード
   //gulp.watch(options.watch).on('change', browserSync.reload);
 });
 
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', gulp.series('sass', 'watch'));
