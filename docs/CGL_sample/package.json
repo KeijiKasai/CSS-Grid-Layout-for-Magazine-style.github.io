@@ -17,7 +17,7 @@
     "gulp-connect-php": "^1.0.1",
     "gulp-notify": "^4.0.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^7.0.0",
+    "gulp-postcss": "^10.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.5",
